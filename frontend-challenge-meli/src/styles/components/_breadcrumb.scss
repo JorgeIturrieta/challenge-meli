@@ -1,0 +1,17 @@
+.breadCrumb {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+
+  .breadCrumb__item {
+    color: #666666;
+    padding-left: 0.5rem;
+
+    &::after {
+      content: ' >';
+    }
+    &:last-child::after {
+      content: none;
+    }
+  }
+}

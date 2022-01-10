@@ -1,0 +1,111 @@
+.card-item {
+  display: grid;
+  //   border: 1px solid red;
+  width: 100%;
+  .card-item__detail {
+    display: flex;
+    flex-direction: column-reverse;
+    // border: 1px solid green;
+    width: 100%;
+    @media screen and (min-width: $md) {
+      grid-template-columns: 2fr 1fr;
+      flex-direction: row;
+    }
+    .card-item__image-container {
+      // border: 1px solid indigo;
+      margin-top: 1em;
+      // padding: 0.5em 0;
+      border-radius: 4px;
+      max-width: 300px;
+      overflow: hidden;
+
+      @media screen and (min-width: $xl) {
+        min-width: 680px;
+        max-width: 680px;
+        padding: 0;
+      }
+      .card-item__image-detail {
+        // border: 1px solid hotpink;
+        // width: inherit;
+        // height: inherit;
+        // margin: auto;
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+        border-radius: inherit;
+        //   @media screen and (min-width: $md) {
+        //     min-width: 680px;
+        //     max-width: 680px;
+        //      height: 700px;
+        //   }
+      }
+    }
+    .card-item__detail-product {
+      display: grid;
+      margin-top: 16px;
+      grid-template-rows: repeat(3, min-content);
+
+      @media screen and (min-width: $md) {
+        margin-left: 3rem;
+      }
+      .card-item__product-new {
+        font-size: 14px;
+        color: #999999;
+      }
+      .card-item__product-title {
+        font-size: 0.8rem;
+        @media screen and (min-width: $md) {
+          font-size: 1rem;
+          margin: 1em 0 2em;
+        }
+      }
+
+      .card-item__product-price {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 10px;
+        align-items: center;
+        font-size: 1.4rem;
+        flex-wrap: wrap;
+        @media screen and (min-width: $md) {
+          grid-template-columns: 1fr;
+          gap: 1em;
+          font-size: 46px;
+        }
+        font-weight: bold;
+
+        .card-item__product__shipping {
+          width: 22px;
+          height: 22px;
+
+          @media screen and (min-width: $md) {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .card-item__price-cents {
+          padding-left: 0.2em;
+          font-size: 0.8em;
+          position: relative;
+          bottom: 0.25em;
+          padding-right: 0.5em;
+        }
+      }
+    }
+  }
+
+  .card-item__product-desc-title {
+    font-size: 1.2rem;
+
+    @media screen and (min-width: $md) {
+      font-size: 28px;
+      margin: 32px 0;
+    }
+  }
+
+  .card-item__description-item {
+    color: #666666;
+    font-size: 1rem;
+  }
+}

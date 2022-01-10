@@ -1,0 +1,100 @@
+$border-radius-image: 4px;
+$size-price: 24px;
+$size-price-mobile: 1.1rem;
+$size-title: 18px;
+$size-location: 12px;
+$size-image-md: 190px;
+$size-image-sm: 150px;
+
+.card {
+  display: flex;
+  width: 100%;
+  margin-top: 1em;
+  padding-bottom: 1em;
+  &:not(:last-child) {
+    border-bottom: 0.5px solid #6666663a;
+  }
+
+  .link-item {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #333;
+
+    .card__image-container {
+      width: 100%;
+      height: $size-image-sm;
+      min-width: $size-image-sm;
+      max-width: $size-image-sm;
+      border-radius: $border-radius-image;
+
+      @media screen and (min-width: $md) {
+        min-width: $size-image-md;
+        max-width: $size-image-md;
+        height: $size-image-md;
+      }
+      .card__image-thumbnail {
+        width: inherit;
+        height: inherit;
+        display: block;
+        object-fit: fill;
+        border-radius: $border-radius-image;
+      }
+    }
+    .card__description {
+      display: grid;
+      margin: 0 1em;
+      @media screen and (min-width: $md) {
+        width: 100%;
+        grid-column-gap: 30px;
+        grid-template-columns: 2fr 1fr;
+      }
+
+      .card__price {
+        display: flex;
+        align-items: center;
+        padding: 1em 0 1em;
+        font-size: $size-price-mobile;
+        font-weight: bold;
+
+        @media screen and (min-width: $md) {
+          padding: 1rem 0 2rem 0;
+          font-size: $size-price;
+        }
+
+        .card__shipping {
+          width: 18px;
+          height: 18px;
+
+          @media screen and (min-width: $md) {
+            width: 30px;
+            height: 30px;
+          }
+        }
+
+        .card__cents {
+          padding-left: 0.2em;
+          font-size: 0.7em;
+          position: relative;
+          bottom: 0.25em;
+          padding-right: 0.5em;
+        }
+      }
+
+      .card__title {
+        font-size: $size-title;
+      }
+
+      .card__location {
+        font-size: $size-location;
+        color: $locationColor;
+        padding-top: 1rem;
+
+        @media screen and (min-width: $md) {
+          text-align: center;
+          padding-top: 2rem;
+        }
+      }
+    }
+  }
+}
